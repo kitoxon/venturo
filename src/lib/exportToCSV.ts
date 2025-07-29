@@ -1,10 +1,20 @@
-export function exportToCSV(data: any[], filename: string) {
+// If you actually want to export an array of strings as a single-column CSV
+export function exportToCSV(
+  data: string[],
+  filename: string,
+  columnName: string = "Value",
+) {
   if (!data || data.length === 0) return;
 
-  const headers = Object.keys(data[0]);
   const csv = [
-    headers.join(","),
-    ...data.map((row) => headers.map((h) => row[h]).join(",")),
+    columnName,
+    ...data.map((value) => {
+      // Handle values that might contain commas, quotes, or newlines
+      if (value.includes(",") || value.includes('"') || value.includes("\n")) {
+        return `"${value.replace(/"/g, '""')}"`;
+      }
+      return value;
+    }),
   ].join("\n");
 
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
