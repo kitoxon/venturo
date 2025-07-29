@@ -83,10 +83,13 @@ export default function CSVUploader() {
     try {
       setSaveStatus("saving");
 
-      const response = await fetch("http://localhost:8000/forecast", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://praevia-backend.onrender.com/forecast",
+        {
+          method: "POST",
+          body: formData,
+        },
+      );
 
       const result = await response.json();
       if (result.forecast) {

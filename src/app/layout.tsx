@@ -1,10 +1,12 @@
-import Sidebar from "@/components/ui/Sidebar";
 import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "KPI Dashboard",
+  title: "Venturo",
   description: "AI-powered forecasts and KPI insights for SMBs",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

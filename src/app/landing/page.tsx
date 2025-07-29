@@ -31,7 +31,8 @@ export default function LandingPage() {
         </p>
 
         <h1 className="text-4xl font-bold mb-4">
-          AI-Powered Forecasts for Founders
+          Predict Your Future with{" "}
+          <span className="text-indigo-600">Venturo</span>
         </h1>
         <p className="text-gray-600 text-lg mb-6">
           Upload your revenue and expense CSV. Instantly see your runway, growth
@@ -55,7 +56,7 @@ export default function LandingPage() {
               </form>
             ) : (
               <p className="text-green-600 font-medium">
-                🎉 Thanks! You'll hear from us soon.
+                🎉 Thanks! You&apos;ll hear from us soon.
               </p>
             )}
           </CardContent>

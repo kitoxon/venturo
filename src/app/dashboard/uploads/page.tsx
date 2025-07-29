@@ -11,8 +11,8 @@ interface UploadEntry {
   id: string;
   name: string;
   created_at: string;
-  data: any[];
-  forecast_results?: any[];
+  data: string[];
+  forecast_results?: Record<string, unknown>;
 }
 
 export default function UploadsPage() {
